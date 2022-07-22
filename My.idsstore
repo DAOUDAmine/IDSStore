@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iDSStore:IDSFramework xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:iDSStore="http://www.example.org/iDSStore" description="For feasibly analysis and functional validation of this framework" use="host machine of cloud" feature="combinates snort">
+  <results idResult="1" metric="robustness" accrucy="95.93"/>
+  <has idType="1" deplyement="HIDS"/>
+  <locates idLocation="1" nameLocation="virtual machine of cloud"/>
+  <imposes idConstraint="1" description="distributed attack" prototypeTypes="availability"/>
+</iDSStore:IDSFramework>

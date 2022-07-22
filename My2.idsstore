@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iDSStore:Micronet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:iDSStore="http://www.example.org/iDSStore">
+  <belongs idLocation="1" nameLocation="" idService="1" description="virtual machine" layer="platform" servuceType="PaaS"/>
+</iDSStore:Micronet>
