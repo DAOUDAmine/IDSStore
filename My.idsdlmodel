@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IDS-DL:Micronet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:IDS-DL="http://IDS-DL" name="[Cloud Environment]">
+  <connects name="[Cloud]"/>
+  <belongs idLocation="1" nameLocation="[Virtual]" idService="1" layer="infrastructure" servuceType="IaaS"/>
+</IDS-DL:Micronet>
