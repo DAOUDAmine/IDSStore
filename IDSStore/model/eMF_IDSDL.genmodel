@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/EMF_IDSDL/src-gen" creationIcons="false" editDirectory="/EMF_IDSDL.edit/src-gen"
+    editorDirectory="/EMF_IDSDL.editor/src-gen" modelPluginID="EMF_IDSDL" modelName="EMF_IDSDL"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>eMF_IDSDL.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="EMF_IDSDL" disposableProviderFactory="true" ecorePackage="eMF_IDSDL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//PrototypeType">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//PrototypeType/Integrity"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//PrototypeType/Authentication"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//PrototypeType/Authorisation"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//PrototypeType/Confidentiality"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//PrototypeType/Avalaibility"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//PrototypeType/No_Repudiation"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//ThreatType">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//ThreatType/Spoofing"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//ThreatType/DenialOfService"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//ThreatType/Repudiation"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//ThreatType/InformationDisclosure"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//ThreatType/ElevationOfPrivilege"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//MetricType">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//MetricType/Flexibile"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//MetricType/Robustness"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//MetricType/Speed"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//MetricType/Efficiency"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//AttackType">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//AttackType/DoS"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//AttackType/U2R"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//AttackType/R2U"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//AttackType/Probe"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//Alarm">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Alarm/FalseNegative"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Alarm/FalsePositive"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Alarm/TrueNegative"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Alarm/TruePositive"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//Control">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Control/Data"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Control/Flux"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Control/PhysicalRessource"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//StackholderType">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//StackholderType/Provider"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//StackholderType/Consumer"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//StackholderType/Owner"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//DatasetType">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//DatasetType/KDD"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//DatasetType/Darpa"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//DatasetType/Kaida"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//BehaviorIDS">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//BehaviorIDS/Active"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//BehaviorIDS/Passive"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//Deployement">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Deployement/NIDS"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Deployement/HIDS"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Deployement/Hybrid"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//DetectionMode">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//DetectionMode/Signature"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//DetectionMode/Bihavior"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//DetectionMode/Hybrid"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//Challange">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Challange/CoLocalisation"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Challange/Outsourcing"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Challange/DataMass"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//AspectType">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//AspectType/Physical"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//AspectType/Virtual"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//StateType">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//StateType/Static"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//StateType/Dynamic"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//Structure">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Structure/Centralized"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Structure/Distributed"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eMF_IDSDL.ecore#//Services">
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Services/Services"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Services/Platform"/>
+      <genEnumLiterals ecoreEnumLiteral="eMF_IDSDL.ecore#//Services/Infrastructure"/>
+    </genEnums>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Service/ID_Service"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Service/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Service/Service"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Service/Belongs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Service/kjj"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Service/In"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Device">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Device/ID_Device"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Device/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Device/Aspect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Device/Contain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Device/ComposesOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Device/Contains"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//VirtualNetwork">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//VirtualNetwork/ID_VN"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//VirtualNetwork/Description"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Environment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Environment/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Environment/State"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Environment/Connects"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Environment/Includes"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Vulnerability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Vulnerability/ID_Vulnerability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Vulnerability/Description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Vulnerability/Affects"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Vulnerability/Assigns"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//MaliciousActor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//MaliciousActor/ID_"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//MaliciousActor/Description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//MaliciousActor/Poses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//MaliciousActor/Is"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Constraint/ID_Constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Constraint/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Constraint/Protoype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Constraint/Satisfies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Constraint/Imposes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Constraint/Puts"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Requirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Requirement/ID_Requirement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Requirement/Fonction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Requirement/Validation"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Stackholder">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Stackholder/ID_Stackholder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Stackholder/Organization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Stackholder/Stackholder"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Stackholder/Executes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Stackholder/Acess"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Goal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Goal/Detection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Goal/Monitoring"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Goal/Analysis"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Goal/SatisfiedBy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//Goal/ComposesOf"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//IDSType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//IDSType/ID_IDS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//IDSType/Deployement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//IDSType/Detection"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//ThreatAttack">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//ThreatAttack/ID_Attack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//ThreatAttack/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//ThreatAttack/Vulnerability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//ThreatAttack/Attack"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//ThreatAttack/Exploits"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Dataset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Dataset/ID_Dataset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Dataset/Attack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Dataset/Duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Dataset/Protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Dataset/SrcByte"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Dataset/DestByte"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Dataset/Dataset"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Location/ID_Location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Location/Name_Location"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Issue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Issue/UnkownAttack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Issue/FalsePositive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Issue/TrueNegative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Issue/Efficiency"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Result">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Result/ID_Result"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Result/Metric"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Result/Value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Result/Accuracy"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//IDSFramework">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//IDSFramework/ID_IDS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//IDSFramework/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//IDSFramework/Use"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//IDSFramework/Ack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//IDSFramework/Structures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//IDSFramework/Locates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//IDSFramework/Has"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//IDSFramework/Uses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//IDSFramework/Have"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//IDSFramework/Results"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF_IDSDL.ecore#//IDSFramework/Combines"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Classifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Classifier/ID_Technique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Classifier/LearningTime"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//MachineLearning">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//MachineLearning/ID_ML"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//MachineLearning/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//MachineLearning/Reference"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF_IDSDL.ecore#//Programmed">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Programmed/ID_Programmed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Programmed/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Programmed/Detection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF_IDSDL.ecore#//Programmed/Reference"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
