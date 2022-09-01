@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eMF_IDSDL" nsURI="http://www.example.org/eMF_IDSDL" nsPrefix="eMF_IDSDL">
+  <eClassifiers xsi:type="ecore:EClass" name="Service">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Service" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Service" eType="#//Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Belongs" lowerBound="1"
+        upperBound="-1" eType="#//Environment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kjj" eType="#//VirtualNetwork"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="In" eType="#//Location"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Device">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Device" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Aspect" eType="#//AspectType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Contain" lowerBound="1"
+        upperBound="-1" eType="#//Environment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ComposesOf" lowerBound="1"
+        upperBound="-1" eType="#//Device" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Contains" eType="#//Service"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VirtualNetwork">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_VN" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PrototypeType">
+    <eLiterals name="Integrity"/>
+    <eLiterals name="Authentication" value="1"/>
+    <eLiterals name="Authorisation" value="2"/>
+    <eLiterals name="Confidentiality" value="3"/>
+    <eLiterals name="Avalaibility" value="4"/>
+    <eLiterals name="No_Repudiation" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ThreatType">
+    <eLiterals name="Spoofing"/>
+    <eLiterals name="DenialOfService" value="1"/>
+    <eLiterals name="Repudiation" value="2"/>
+    <eLiterals name="InformationDisclosure" value="3"/>
+    <eLiterals name="ElevationOfPrivilege" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MetricType">
+    <eLiterals name="Flexibile"/>
+    <eLiterals name="Robustness" value="1"/>
+    <eLiterals name="Speed" value="2"/>
+    <eLiterals name="Efficiency" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AttackType">
+    <eLiterals name="DoS"/>
+    <eLiterals name="U2R" value="1"/>
+    <eLiterals name="R2U" value="2"/>
+    <eLiterals name="Probe" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Alarm">
+    <eLiterals name="FalseNegative"/>
+    <eLiterals name="FalsePositive" value="1"/>
+    <eLiterals name="TrueNegative" value="2"/>
+    <eLiterals name="TruePositive" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Control">
+    <eLiterals name="Data"/>
+    <eLiterals name="Flux" value="1"/>
+    <eLiterals name="PhysicalRessource" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StackholderType">
+    <eLiterals name="Provider"/>
+    <eLiterals name="Consumer" value="1"/>
+    <eLiterals name="Owner" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DatasetType">
+    <eLiterals name="KDD"/>
+    <eLiterals name="Darpa" value="1"/>
+    <eLiterals name="Kaida" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BehaviorIDS">
+    <eLiterals name="Active"/>
+    <eLiterals name="Passive" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Deployement">
+    <eLiterals name="NIDS"/>
+    <eLiterals name="HIDS" value="1"/>
+    <eLiterals name="Hybrid" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DetectionMode">
+    <eLiterals name="Signature"/>
+    <eLiterals name="Bihavior" value="1"/>
+    <eLiterals name="Hybrid" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Challange">
+    <eLiterals name="CoLocalisation"/>
+    <eLiterals name="Outsourcing" value="1"/>
+    <eLiterals name="DataMass" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AspectType">
+    <eLiterals name="Physical"/>
+    <eLiterals name="Virtual" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StateType">
+    <eLiterals name="Static"/>
+    <eLiterals name="Dynamic" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Structure">
+    <eLiterals name="Centralized"/>
+    <eLiterals name="Distributed" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Services">
+    <eLiterals name="Services"/>
+    <eLiterals name="Platform" value="1"/>
+    <eLiterals name="Infrastructure" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Environment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="State" eType="#//StateType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Connects" upperBound="-1"
+        eType="#//Environment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Includes" eType="#//Issue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vulnerability">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Vulnerability" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Affects" lowerBound="1"
+        upperBound="-1" eType="#//Device"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Assigns" lowerBound="1"
+        upperBound="-1" eType="#//Service"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MaliciousActor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Poses" lowerBound="1" upperBound="-1"
+        eType="#//ThreatAttack"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Is" eType="#//Stackholder"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Constraint" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Protoype" eType="#//PrototypeType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Satisfies" lowerBound="1"
+        upperBound="-1" eType="#//Requirement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Imposes" eType="#//IDSFramework"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Puts" lowerBound="1" upperBound="-1"
+        eType="#//Environment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Requirement" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Fonction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Validation" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stackholder">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Stackholder" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Organization" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Stackholder" eType="#//StackholderType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Executes" eType="#//IDSFramework"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Acess" lowerBound="1" upperBound="-1"
+        eType="#//Environment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Goal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Detection" eType="#//Control"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Monitoring" eType="#//Control"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Analysis" eType="#//Control"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SatisfiedBy" lowerBound="1"
+        upperBound="-1" eType="#//IDSType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ComposesOf" lowerBound="1"
+        upperBound="-1" eType="#//Goal" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IDSType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_IDS" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Deployement" eType="#//Deployement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Detection" eType="#//DetectionMode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreatAttack">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Attack" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Vulnerability" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Attack" eType="#//AttackType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Exploits" lowerBound="1"
+        upperBound="-1" eType="#//Vulnerability"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dataset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Dataset" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Attack" eType="#//AttackType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Duration" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Protocol" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SrcByte" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DestByte" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Dataset" eType="#//DatasetType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Location" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name_Location" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Issue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="UnkownAttack" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="FalsePositive" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TrueNegative" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Efficiency" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Result">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Result" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Metric" eType="#//MetricType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" eType="#//Alarm"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Accuracy" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IDSFramework">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_IDS" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Use" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Ack" eType="#//BehaviorIDS"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Structures" eType="#//Structure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Locates" lowerBound="1"
+        eType="#//Location" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Has" lowerBound="1" upperBound="-1"
+        eType="#//IDSType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Uses" lowerBound="1" upperBound="-1"
+        eType="#//Dataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Have" lowerBound="1" upperBound="-1"
+        eType="#//Issue"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Results" lowerBound="1"
+        upperBound="-1" eType="#//Result" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Combines" lowerBound="1"
+        upperBound="-1" eType="#//Classifier" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Technique" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="LearningTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MachineLearning">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_ML" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Reference" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Programmed">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID_Programmed" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Detection" eType="#//DetectionMode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Reference" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+</ecore:EPackage>
