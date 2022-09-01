@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>nl.tno.esdl</groupId>
+	<artifactId>esdl-drive</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<properties>
+		<openliberty.maven.version>3.2.2</openliberty.maven.version>
+		<openliberty.version>20.0.0.4</openliberty.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<final.name>esdl-drive</final.name>
+		<server.name>esdl-drive-server</server.name>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
+
+	<!-- the hesi snapshot repository updates ESDL after each push -->
+	<repositories>
+		<repository>
+			<id>hesi-snapshots</id>
+			<name>HESI snapshot artifactory</name>
+			<url>http://ci.hesi.energy:8081/artifactory/libs-snapshot-local</url>
+		</repository>
+	</repositories>
+
+	
+
+
+	<!-- <assemblyArtifact> -->
+	<!-- <groupId>io.openliberty</groupId> -->
+	<!-- <artifactId>openliberty-kernel</artifactId> -->
+	<!-- <version>18.0.0.2</version> -->
+	<!-- <type>zip</type> -->
+	<!-- </assemblyArtifact> -->
+<!-- 	<dependencyManagement> -->
+<!-- 		<dependencies> -->
+<!-- 			<dependency> -->
+<!-- 				<groupId>io.openliberty.features</groupId> -->
+<!-- 				<artifactId>features-bom</artifactId> -->
+<!-- 				<version>${openliberty.version}</version> -->
+<!-- 				<type>pom</type> -->
+<!-- 				<scope>import</scope> -->
+<!-- 			</dependency> -->
+<!-- 		</dependencies> -->
+<!-- 	</dependencyManagement> -->
+	<dependencies>
+		<dependency>
+			<groupId>io.openliberty.features</groupId>
+			<artifactId>openidConnectClient-1.0</artifactId>
+			<version>${openliberty.version}</version> 
+			<type>esa</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.microprofile</groupId>
+			<artifactId>microprofile</artifactId>
+			<version>3.3</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>io.opentracing.contrib</groupId> -->
+<!-- 			<artifactId>opentracing-jaxrs2-discovery</artifactId> -->
+<!-- 			<version>1.0.0</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>io.vertx</groupId> -->
+<!-- 			<artifactId>vertx-auth-jwt</artifactId> -->
+<!-- 			<version>3.8.1</version> -->
+<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.eclipselabs</groupId>
+			<artifactId>cdo</artifactId>
+			<version>4.7.3-SNAPSHOT</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipselabs</groupId>
+			<artifactId>net4j</artifactId>
+			<version>4.7.3-SNAPSHOT</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>nl.tno.esdl</groupId>
+			<artifactId>esdl</artifactId>
+			<version>2.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+  			<artifactId>org.eclipse.emf.compare</artifactId>
+  			<version>3.5.3.202005260905</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>29.0-jre</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
+
+	</dependencies>
+	<build>
+		<finalName>${final.name}</finalName>
+	</build>
+	<profiles>
+		<profile>
+			<id>liberty</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>io.openliberty.tools</groupId>
+						<artifactId>liberty-maven-plugin</artifactId>
+						<version>${openliberty.maven.version}</version>
+						<executions>
+							<execution>
+								<id>package-server</id>
+								<phase>package</phase>
+								<goals>
+									<goal>create</goal>
+									<goal>install-feature</goal>
+									<goal>deploy</goal>
+									<goal>package</goal>
+								</goals>
+								<configuration>
+<!-- 									<serverStartTimeout>60</serverStartTimeout> -->
+<!-- 									<verifyTimeout>61</verifyTimeout> -->
+	 								<outputDirectory>target/wlp-package</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
+						<configuration>
+							<appArchive>${project.build.directory}/${final.name}.war
+							</appArchive>
+							<include>runnable</include>
+							<serverName>${server.name}</serverName>
+							<bootstrapProperties>
+								<project.name>${final.name}</project.name>
+								<!-- <jwt.issuer>https://server.example.com</jwt.issuer> -->
+							</bootstrapProperties>
+							<serverStartTimeout>60</serverStartTimeout>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

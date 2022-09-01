@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="${project.name}">
+
+	<!--  this is the keycloak configuration for deployement on localhost -->
+
+  <!--  httpsRequired should be true for all production deployments!!! -->
+    <!-- Use discoveryEndpointUrl="${keycloak_realm}/.well-known/openid-configuration" for automatic configuration
+    	when not deploying everything on localhost, as authorizationEndpointUrl must be hardcoded to localhost:8080 (user/browser facing URL) ! -->
+    	
+    <!--  httpsRequired should be true for all production deployments!!! -->
+    <!-- Use discoveryEndpointUrl="${keycloak_realm}/.well-known/openid-configuration" for automatic configuration
+    	when not deploying everything on localhost, as authorizationEndpointUrl must be hardcoded to localhost:8080 (user/browser facing URL) ! -->
+    	
+    <openidConnectClient id="cdoMondaine" 
+    	audiences="cdo-mondaine,esdl-mapeditor,account"
+    	tokenReuse="true" 
+	    clientId="cdo-mondaine"
+	    clientSecret="${keycloak_client_secret}"
+	    signatureAlgorithm="RS256"
+	    scope="openid profile email user_group user_group_path microprofile-jwt"
+	    userIdentifier="email"
+    	groupIdentifier="groups"
+
+    	inboundPropagation="supported"
+    	trustAliasName="esdl-mapeditor"
+    	trustStoreRef="defaultKeyStore"
+    	
+    	
+	    issuerIdentifier="${keycloak_realm},${keycloak_realm_external}"
+		authorizationEndpointUrl="${keycloak_realm_external}/protocol/openid-connect/auth"
+		tokenEndpointUrl="${keycloak_realm}/protocol/openid-connect/token"		
+		userInfoEndpointEnabled="true" 
+		userInfoEndpointUrl="${keycloak_realm}/protocol/openid-connect/userinfo"
+		httpsRequired="false"
+		/>
+	<!--
+		discoveryEndpointUrl="${keycloak_realm}/.well-known/openid-configuration"     	
+		Replace discoveryEndpointUrl with the lines below to make a localhost docker keycloak setup work.
+	
+    	issuerIdentifier="${keycloak_realm},${keycloak_realm_external}"
+		authorizationEndpointUrl="${keycloak_realm_external}/protocol/openid-connect/auth"
+		tokenEndpointUrl="${keycloak_realm}/protocol/openid-connect/token"		
+		userInfoEndpointEnabled="true" 
+		userInfoEndpointUrl="${keycloak_realm}/protocol/openid-connect/userinfo"
+		httpsRequired="false"
+	-->
+
+	
+	<!--  map the user ewoud.werkman@tno.nl to the administrator  -->
+	<!--  so it can access the /metrics administration endpoint -->
+	<administrator-role>
+    	<user-access-id>user:${keycloak_realm_external}/ewoud.werkman@tno.nl</user-access-id>
+   	 	<group-access-id>group:${keycloak_realm_external}/cdo_read</group-access-id>
+	</administrator-role>
+
+</server>

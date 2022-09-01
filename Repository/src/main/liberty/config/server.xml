@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="${project.name}">
+	
+	
+	<!--  These variable can be overriden by Env variables, e.g. KEYCLOAK_REALM -->
+	<!-- keycloak_realm URI, accessible by this service -->
+	<variable name="keycloak_realm" defaultValue="http://keycloak:8080/auth/realms/esdl-mapeditor" />
+	<!-- Optinal for localhost deployment, Keycloak realm URI, external accessible. Defaults to the 'keycloak_realm' URI -->
+	<variable name="keycloak_realm_external" defaultValue="${keycloak_realm}" />
+	<!-- Client secret for cdo_mondaine client in keycloak -->
+	<variable name="keycloak_client_secret" defaultValue="329ab44b-087b-44d2-89b7-da139d32a7b1" />
+	<!--  default keystore password, please change somewhere -->
+	<variable name="keytool_password" defaultValue="password" />
+	
+	
+	
+	<include location="keycloak.xml" optional="true" />
+	<include location="dev.xml" optional="true" />
+
+
+    <featureManager>
+<!--         <feature>microProfile-3.2</feature> -->
+        <feature>appSecurity-3.0</feature>
+<!--         <feature>transportSecurity-1.0</feature> -->
+        <feature>openIDConnectClient-1.0</feature>
+        <feature>jaxrs-2.1</feature>
+        <feature>cdi-2.0</feature>
+        <feature>mpConfig-1.4</feature>
+        <feature>jsonp-1.1</feature>
+        <feature>jsonb-1.0</feature>
+        <feature>mpOpenTracing-1.3</feature>
+        <feature>mpOpenAPI-1.1</feature>
+        <feature>mpMetrics-2.3</feature>
+<!--         <feature>jwtSso-1.0</feature> -->
+<!--         <feature>mpJwt-1.1</feature> -->
+    </featureManager>
+
+	<httpAccessLogging id="accessLogging"/>
+    <httpEndpoint id="defaultHttpEndpoint"
+    			  host="*"
+                  httpPort="9080"
+                  httpsPort="9443" 
+                  accessLoggingRef="accessLogging"/>
+
+    <webApplication location="${project.name}.war" contextRoot="/">
+        <classloader apiTypeVisibility="+third-party" />
+		 <application-bnd>
+		 	<!--  Map the cdo_read group name from keycloak on the cdo_read security role -->
+		 	<!--  This is used in web.xml to secure the static html files served by liberty by using keycloak -->
+			<security-role name="cdo_read">
+				<group name="cdo_read" access-id="group:${keycloak_realm_external}/cdo_read"/>
+			</security-role>
+		</application-bnd>
+    </webApplication>
+
+    
+  
+<!-- 	    userNameAttribute="email" -->
+<!-- 	    userIdentityToCreateSubject="email"  -->
+<!--     	groupNameAttribute="groups" -->
+<!-- 	authFilterRef="dataUrl" -->
+	
+<!-- 	<jwtSso issuer="https://idm.hesi.energy/auth/realms/esdl-mapeditor"  setCookieSecureFlag="false"/>             -->
+<!-- 	includeLtpaCookie="true"  jwtBuilderRef="myBuilder" -->
+<!-- 	<jwtConsumer id="defaultJWTConsumer" trustStoreRef="defaultKeyStore" trustAliasName="esdl-mapeditor" issuer="https://idm.hesi.energy/auth/realms/esdl-mapeditor"/> -->
+
+<!-- As alternative to the openIdConnect config we could also use microprofile JWT, but at march 2020 then did not support
+     communicating additional claims in the JWT token besides groups. In future this should work and is simpler to configure: 
+     use jwtConsumer, jwtBuilder, and mpJWT --> 
+<!-- 	<jwtConsumer id="defaultJWTConsumer" jwkEnabled="true" jwksUri="https://idm.hesi.energy/auth/realms/esdl-mapeditor/protocol/openid-connect/certs" issuer="https://idm.hesi.energy/auth/realms/esdl-mapeditor"/>
+	<jwtBuilder id="myBuilder" 
+		issuer="https://idm.hesi.energy/auth/realms/esdl-mapeditor"
+		scope="openid profile email groups user_group microprofile-jwt">
+		<claims>name,aud,user_group,groups,upn</claims>
+		<audiences>cdo-mapeditor</audiences>
+	</jwtBuilder>       
+	<mpJwt id="myMpJwt" 
+		issuer="https://idm.hesi.energy/auth/realms/esdl-mapeditor"
+		jwksUri="https://idm.hesi.energy/auth/realms/esdl-mapeditor/protocol/openid-connect/certs"
+		audiences="cdo-mapeditor" 
+		/>
+    -->
+<!--     <authFilter id="dataUrl"> -->
+<!--          <requestUrl id="requestUrl" urlPattern="/store/*" matchType="contains"/> -->
+<!-- 	</authFilter> -->
+
+    <!-- This is the keystore that will be used by SSL and by JWT. -->
+    <ssl id="defaultSSLConfig" keyStoreRef="defaultKeyStore" verifyHostname="false" trustDefaultCerts="true" />
+    <keyStore id="defaultKeyStore" location="public.p12" type="PKCS12" password="${keytool_password}" 
+    	      trustDefaultCerts="true" 
+    	      pollingRate="1m" 
+    	      updateTrigger="polled" />
+
+
+  <!-- com.ibm.ws.webcontainer*=all:HTTPChannel=all:GenericBNF=all -->
+	<logging traceSpecification="com.ibm.ws.webcontainer*=all:com.ibm.ws.security.*=all=enabled:nl.tno.*=all" consoleFormat="simple" maxFileSize="200"/> <!-- maxFiles="8"   -->
+
+
+</server>
